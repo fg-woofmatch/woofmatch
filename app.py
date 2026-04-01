@@ -39,7 +39,7 @@ st.markdown("""
         inset: 10px auto auto 10px !important;
     }
 
-    .stApp 
+    .stApp { background-color: #F0E6D2 !important; }
     [data-testid="stSidebar"] { background-color: #F0E6D2 !important; }
 
     /* Tes cases encadrées */
