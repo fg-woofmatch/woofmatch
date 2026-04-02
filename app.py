@@ -20,13 +20,55 @@ if not api_key:
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
 # 2. CSS pour un look épuré
+# 2. CSS pour un look épuré et intégration de la barre de saisie
 st.markdown("""
     <style>
+    /* Fond de l'application */
     .stApp { background-color: #FFFFFF !important; }
+    
+    /* Cache le header et la sidebar */
     [data-testid="stHeader"] { background-color: rgba(0,0,0,0) !important; }
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
+
+    /* Couleurs de texte */
     html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
+
+    /* --- PERSONNALISATION DE LA BARRE DE SAISIE (BAS) --- */
+    
+    /* 1. Le conteneur global du bas */
+    [data-testid="stChatInput"] {
+        bottom: 20px !important;
+        background-color: transparent !important;
+    }
+
+    /* 2. Le champ de texte lui-même */
+    [data-testid="stChatInput"] textarea {
+        background-color: #FDF6E3 !important; /* Un beige très léger pour rappeler le thème */
+        border: 2px solid #E6E0D0 !important;
+        border-radius: 15px !important;
+        color: #1A1A1A !important;
+    }
+
+    /* 3. Le bouton d'envoi (la petite flèche) */
+    [data-testid="stChatInput"] button {
+        background-color: #1A1A1A !important;
+        color: white !important;
+        border-radius: 50% !important;
+    }
+    
+    /* 4. Effet au survol du bouton */
+    [data-testid="stChatInput"] button:hover {
+        background-color: #E6E0D0 !important;
+        color: #1A1A1A !important;
+    }
+
+    /* Ajustement de la zone de message pour ne pas être cachée par la barre */
+    .stChatMessage {
+        background-color: #F8F9FA !important;
+        border-radius: 15px !important;
+        margin-bottom: 10px !important;
+    }
     </style>
     """, unsafe_allow_html=True)
 
