@@ -20,45 +20,53 @@ if not api_key:
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
 # 2. CSS pour un look épuré et suppression du footer
+# 2. CSS pour éradiquer le bloc noir en bas
 st.markdown("""
     <style>
-    /* 1. Fond et texte global */
+    /* 1. Fond global */
     .stApp { background-color: #FFFFFF !important; }
-    html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
-
-    /* 2. Suppression des éléments natifs Streamlit (Header & Footer) */
-    [data-testid="stHeader"] { visibility: hidden; height: 0%; }
-    footer { visibility: hidden; }
-    #MainMenu { visibility: hidden; }
     
-    /* On cache aussi la sidebar si elle essaie de revenir */
-    [data-testid="collapsedControl"] { display: none; }
-    section[data-testid="stSidebar"] { display: none; }
-
-    /* 3. Personnalisation de la barre de saisie (Bas) */
+    /* 2. Suppression totale du Header et du Footer natif */
+    [data-testid="stHeader"], footer { visibility: hidden; height: 0px; }
+    
+    /* 3. CIBLAGE PRÉCIS DU BLOC DE SAISIE (Le coupable du rectangle noir) */
+    
+    /* On force le conteneur de la barre de saisie à être blanc */
     [data-testid="stChatInput"] {
-        bottom: 20px !important;
-        background-color: transparent !important;
+        background-color: #FFFFFF !important;
+        border-top: 1px solid #F0E6D2 !important; /* Optionnel : petite ligne de séparation propre */
+        padding-bottom: 20px !important;
     }
 
+    /* On retire l'ombre ou le dégradé que Streamlit met parfois autour */
+    [data-testid="stChatInput"] > div {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Style du champ texte */
     [data-testid="stChatInput"] textarea {
         background-color: #FDF6E3 !important;
-        border: 2px solid #E6E0D0 !important;
-        border-radius: 15px !important;
+        border: 1px solid #E6E0D0 !important;
+        border-radius: 12px !important;
         color: #1A1A1A !important;
     }
 
+    /* Style du bouton d'envoi */
     [data-testid="stChatInput"] button {
         background-color: #1A1A1A !important;
-        color: white !important;
         border-radius: 50% !important;
     }
 
-    /* 4. Style des bulles de message pour plus de lisibilité */
-    .stChatMessage {
-        border-radius: 15px !important;
-        padding: 1rem !important;
+    /* 4. Couleurs de texte générales */
+    html, body, .stMarkdown, p, h1, span, label {
+        color: #1A1A1A !important;
     }
+
+    /* Masquer le menu et la sidebar */
+    #MainMenu { visibility: hidden; }
+    [data-testid="collapsedControl"] { display: none; }
+    section[data-testid="stSidebar"] { display: none; }
     </style>
     """, unsafe_allow_html=True)
 
