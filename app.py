@@ -36,23 +36,34 @@ st.markdown("""
         background-image: none !important;
     }
 
-    /* 3. STYLE DE LA BARRE DE SAISIE */
+    /* 3. STYLE DE LA BARRE DE SAISIE AGRANDIE */
     [data-testid="stChatInput"] {
         background-color: #FFFFFF !important;
-        padding-bottom: 20px !important;
+        padding-bottom: 30px !important; /* Un peu plus d'espace en bas */
     }
 
     [data-testid="stChatInput"] textarea {
         background-color: #FDF6E3 !important;
         border: 1px solid #E6E0D0 !important;
-        border-radius: 12px !important;
+        border-radius: 15px !important;
         color: #1A1A1A !important;
-        caret-color: #1A1A1A !important; /* Barre clignotante active */
+        caret-color: #1A1A1A !important;
+        
+        /* --- AGRANDISSEMENT --- */
+        padding: 15px !important; /* Plus d'espace intérieur */
+        min-height: 60px !important; /* Hauteur minimale plus grande */
+    }
+
+    /* --- COULEUR DE LA PHRASE (Placeholder) --- */
+    [data-testid="stChatInput"] textarea::placeholder {
+        color: #888888 !important; /* Un gris plus soutenu pour la visibilité */
+        opacity: 1 !important;
     }
 
     [data-testid="stChatInput"] button {
         background-color: #1A1A1A !important;
         border-radius: 50% !important;
+        bottom: 12px !important; /* Aligné avec la nouvelle hauteur */
     }
 
     /* 4. NETTOYAGE UI */
