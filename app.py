@@ -30,6 +30,12 @@ st.markdown("""
     [data-testid="stBottom"] {
         background-color: #FFFFFF !important;
         border-top: none !important;
+    [data-testid="stChatInput"] textarea {
+        background-color: #FDF6E3 !important;
+        border: 1px solid #E6E0D0 !important;
+        border-radius: 12px !important;
+        color: #1A1A1A !important;
+        caret-color: #1A1A1A !important; /* Force la barre clignotante en noir */
     }
     
     /* On cible aussi le conteneur interne pour être sûr */
@@ -129,7 +135,7 @@ if db:
 
     chain = (prompt | llm | StrOutputParser())
 
-    if user_input := st.chat_input("Parle au Parrain..."):
+   if user_input := st.chat_input("Demande à Woof Match..."):
         # Affichage immédiat du message utilisateur
         st.chat_message("user").markdown(user_input)
         
