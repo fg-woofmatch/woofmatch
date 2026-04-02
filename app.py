@@ -62,7 +62,7 @@ st.markdown("---")
     for message in st.session_state.messages:
     # On définit l'icône selon le rôle
     # "assistant" devient un emoji chien, "user" reste par défaut ou ce que tu veux
-    avatar = "🐶" if message["role"] == "assistant" else None
+    avatar = "logo.png" if message["role"] == "assistant" else None
     
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
