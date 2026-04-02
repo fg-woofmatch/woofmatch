@@ -19,55 +19,45 @@ if not api_key:
 
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
-# 2. CSS pour un look épuré
-# 2. CSS pour un look épuré et intégration de la barre de saisie
+# 2. CSS pour un look épuré et suppression du footer
 st.markdown("""
     <style>
-    /* Fond de l'application */
+    /* 1. Fond et texte global */
     .stApp { background-color: #FFFFFF !important; }
+    html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
+
+    /* 2. Suppression des éléments natifs Streamlit (Header & Footer) */
+    [data-testid="stHeader"] { visibility: hidden; height: 0%; }
+    footer { visibility: hidden; }
+    #MainMenu { visibility: hidden; }
     
-    /* Cache le header et la sidebar */
-    [data-testid="stHeader"] { background-color: rgba(0,0,0,0) !important; }
+    /* On cache aussi la sidebar si elle essaie de revenir */
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
 
-    /* Couleurs de texte */
-    html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
-
-    /* --- PERSONNALISATION DE LA BARRE DE SAISIE (BAS) --- */
-    
-    /* 1. Le conteneur global du bas */
+    /* 3. Personnalisation de la barre de saisie (Bas) */
     [data-testid="stChatInput"] {
         bottom: 20px !important;
         background-color: transparent !important;
     }
 
-    /* 2. Le champ de texte lui-même */
     [data-testid="stChatInput"] textarea {
-        background-color: #FDF6E3 !important; /* Un beige très léger pour rappeler le thème */
+        background-color: #FDF6E3 !important;
         border: 2px solid #E6E0D0 !important;
         border-radius: 15px !important;
         color: #1A1A1A !important;
     }
 
-    /* 3. Le bouton d'envoi (la petite flèche) */
     [data-testid="stChatInput"] button {
         background-color: #1A1A1A !important;
         color: white !important;
         border-radius: 50% !important;
     }
-    
-    /* 4. Effet au survol du bouton */
-    [data-testid="stChatInput"] button:hover {
-        background-color: #E6E0D0 !important;
-        color: #1A1A1A !important;
-    }
 
-    /* Ajustement de la zone de message pour ne pas être cachée par la barre */
+    /* 4. Style des bulles de message pour plus de lisibilité */
     .stChatMessage {
-        background-color: #F8F9FA !important;
         border-radius: 15px !important;
-        margin-bottom: 10px !important;
+        padding: 1rem !important;
     }
     </style>
     """, unsafe_allow_html=True)
