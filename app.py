@@ -19,29 +19,21 @@ if not api_key:
 
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
-# 2. CSS pour un look épuré et suppression du footer
-# 2. CSS pour éradiquer le bloc noir (stBottom)
+# 2. CSS pour un look épuré, sans bloc noir, avec curseur clignotant
 st.markdown("""
     <style>
     /* 1. Fond global blanc */
     .stApp { background-color: #FFFFFF !important; }
     
-    /* 2. CIBLAGE DU BLOC BAS (Le fameux stBottom / stemotion-cache) */
+    /* 2. CIBLAGE DU BLOC BAS (stBottom) */
     [data-testid="stBottom"] {
         background-color: #FFFFFF !important;
         border-top: none !important;
-    [data-testid="stChatInput"] textarea {
-        background-color: #FDF6E3 !important;
-        border: 1px solid #E6E0D0 !important;
-        border-radius: 12px !important;
-        color: #1A1A1A !important;
-        caret-color: #1A1A1A !important; /* Force la barre clignotante en noir */
     }
     
-    /* On cible aussi le conteneur interne pour être sûr */
     [data-testid="stBottom"] > div {
         background-color: #FFFFFF !important;
-        background-image: none !important; /* Enlève les dégradés potentiels */
+        background-image: none !important;
     }
 
     /* 3. STYLE DE LA BARRE DE SAISIE */
@@ -55,6 +47,7 @@ st.markdown("""
         border: 1px solid #E6E0D0 !important;
         border-radius: 12px !important;
         color: #1A1A1A !important;
+        caret-color: #1A1A1A !important; /* Barre clignotante active */
     }
 
     [data-testid="stChatInput"] button {
@@ -62,7 +55,7 @@ st.markdown("""
         border-radius: 50% !important;
     }
 
-    /* 4. NETTOYAGE UI (Header, Footer, Menu) */
+    /* 4. NETTOYAGE UI */
     [data-testid="stHeader"], footer { visibility: hidden; height: 0px; }
     #MainMenu { visibility: hidden; }
     [data-testid="collapsedControl"] { display: none; }
@@ -100,7 +93,6 @@ st.markdown("---")
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
 
-# Affichage des messages
 for message in st.session_state.messages:
     avatar = "logo.png" if message["role"] == "assistant" else None
     with st.chat_message(message["role"], avatar=avatar):
@@ -115,15 +107,14 @@ if db:
         ("system", """Tu es 'Le Parrain des Chiens', un expert canin légendaire, drôle et psychologue. 🕶️
         
         TON RÔLE : 
-        Tu ne listes pas des chiens, tu maries des âmes. Tu n'as plus de formulaires, tu dois TOUT découvrir par la discussion.
+        Tu maries des âmes. Tu dois TOUT découvrir par la discussion.
 
-        PROTOCOLE D'ENQUÊTE :
-        1. FLEXIBILITÉ : Si l'utilisateur pose une question directe, réponds avec expertise, puis relance l'enquête.
-        2. PRO-ACTIVITÉ : Découvre le logement, le sport, et les contraintes (enfants, allergies, temps seul).
-        3. ANTI-PRÉCIPITATION : Ne donne JAMAIS de race au premier message. Analyse d'abord l'humain.
-        4. IMAGE : Quand tu proposes enfin 2 races max, affiche l'image : ![nom](lien).
+        PROTOCOLE :
+        1. FLEXIBILITÉ : Réponds aux questions directes, puis relance l'enquête.
+        2. PRO-ACTIVITÉ : Découvre le logement, le sport, et les contraintes (enfants, allergies).
+        3. IMAGE : Affiche l'image ainsi : ![nom](lien).
 
-        TON STYLE : Direct, plein d'emojis, punchlines de coach, bienveillance totale.
+        TON STYLE : Direct, emojis, punchlines, bienveillance totale.
         
         Contexte : {context}"""),
         MessagesPlaceholder(variable_name="history"),
@@ -135,16 +126,13 @@ if db:
 
     chain = (prompt | llm | StrOutputParser())
 
-   if user_input := st.chat_input("Demande à Woof Match..."):
-        # Affichage immédiat du message utilisateur
+    if user_input := st.chat_input("Demande à Woof Match..."):
         st.chat_message("user").markdown(user_input)
         
-        # Préparation des données
         context_docs = retriever.invoke(user_input)
         formatted_context = format_docs(context_docs)
         chat_history = st.session_state.messages 
 
-        # Génération de la réponse
         with st.chat_message("assistant", avatar="logo.png"):
             response = chain.invoke({
                 "context": formatted_context,
@@ -153,6 +141,5 @@ if db:
             })
             st.markdown(response)
         
-        # Sauvegarde dans l'historique
         st.session_state.messages.append({"role": "user", "content": user_input})
         st.session_state.messages.append({"role": "assistant", "content": response})
