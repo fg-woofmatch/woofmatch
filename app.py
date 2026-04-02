@@ -20,31 +20,30 @@ if not api_key:
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
 # 2. CSS pour un look épuré et suppression du footer
-# 2. CSS pour éradiquer le bloc noir en bas
+# 2. CSS pour éradiquer le bloc noir (stBottom)
 st.markdown("""
     <style>
-    /* 1. Fond global */
+    /* 1. Fond global blanc */
     .stApp { background-color: #FFFFFF !important; }
     
-    /* 2. Suppression totale du Header et du Footer natif */
-    [data-testid="stHeader"], footer { visibility: hidden; height: 0px; }
+    /* 2. CIBLAGE DU BLOC BAS (Le fameux stBottom / stemotion-cache) */
+    [data-testid="stBottom"] {
+        background-color: #FFFFFF !important;
+        border-top: none !important;
+    }
     
-    /* 3. CIBLAGE PRÉCIS DU BLOC DE SAISIE (Le coupable du rectangle noir) */
-    
-    /* On force le conteneur de la barre de saisie à être blanc */
+    /* On cible aussi le conteneur interne pour être sûr */
+    [data-testid="stBottom"] > div {
+        background-color: #FFFFFF !important;
+        background-image: none !important; /* Enlève les dégradés potentiels */
+    }
+
+    /* 3. STYLE DE LA BARRE DE SAISIE */
     [data-testid="stChatInput"] {
         background-color: #FFFFFF !important;
-        border-top: 1px solid #F0E6D2 !important; /* Optionnel : petite ligne de séparation propre */
         padding-bottom: 20px !important;
     }
 
-    /* On retire l'ombre ou le dégradé que Streamlit met parfois autour */
-    [data-testid="stChatInput"] > div {
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
-
-    /* Style du champ texte */
     [data-testid="stChatInput"] textarea {
         background-color: #FDF6E3 !important;
         border: 1px solid #E6E0D0 !important;
@@ -52,21 +51,19 @@ st.markdown("""
         color: #1A1A1A !important;
     }
 
-    /* Style du bouton d'envoi */
     [data-testid="stChatInput"] button {
         background-color: #1A1A1A !important;
         border-radius: 50% !important;
     }
 
-    /* 4. Couleurs de texte générales */
-    html, body, .stMarkdown, p, h1, span, label {
-        color: #1A1A1A !important;
-    }
-
-    /* Masquer le menu et la sidebar */
+    /* 4. NETTOYAGE UI (Header, Footer, Menu) */
+    [data-testid="stHeader"], footer { visibility: hidden; height: 0px; }
     #MainMenu { visibility: hidden; }
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
+
+    /* Texte global noir */
+    html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
     </style>
     """, unsafe_allow_html=True)
 
