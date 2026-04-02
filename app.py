@@ -59,11 +59,23 @@ st.markdown("<p style='text-align: center; font-style: italic;'>L'expert qui dé
 st.markdown("---")
 
 # 5. HISTORIQUE
+    for message in st.session_state.messages:
+    # On définit l'icône selon le rôle
+    # "assistant" devient un emoji chien, "user" reste par défaut ou ce que tu veux
+    avatar = "🐶" if message["role"] == "assistant" else None
+    
+    with st.chat_message(message["role"], avatar=avatar):
+        st.markdown(message["content"])
+        
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
 
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
+    for message in st.session_state.messages:
+    # On définit l'icône selon le rôle
+    # "assistant" devient un emoji chien, "user" reste par défaut ou ce que tu veux
+    avatar = "logo.png" if message["role"] == "assistant" else None
+    
+    with st.chat_message(message["role"], avatar="logo.png"):
         st.markdown(message["content"])
 
 # 6. LOGIQUE IA (PROMPT AMÉLIORÉ)
@@ -105,7 +117,7 @@ if db:
         formatted_context = format_docs(context_docs)
         chat_history = st.session_state.messages 
 
-        with st.chat_message("assistant"):
+with st.chat_message("assistant", avatar="logo.png"):
             response = chain.invoke({
                 "context": formatted_context,
                 "question": user_input,
