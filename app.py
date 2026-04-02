@@ -72,6 +72,18 @@ st.markdown("""
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
 
+    /* --- COULEUR DE L'AVATAR USER (Cercle Rose Pâle) --- */
+    [data-testid="stChatMessageAvatarUser"] {
+        background-color: #FFD1DC !important; /* Rose pâle "Baby Pink" */
+        color: #1A1A1A !important; /* Couleur de l'icône à l'intérieur */
+    }
+
+    /* Optionnel : Si tu veux aussi que la bulle de texte de l'utilisateur soit rosée */
+    [data-test="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+        background-color: #FFF0F5 !important; /* Fond de la bulle de texte en rose très clair */
+        border-radius: 15px !important;
+    }
+
     /* Texte global noir */
     html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
     </style>
@@ -103,9 +115,14 @@ st.markdown("---")
 # 5. INITIALISATION & HISTORIQUE
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
-
+        
 for message in st.session_state.messages:
-    avatar = "logo.png" if message["role"] == "assistant" else None
+    # Avatar assistant = logo, Avatar user = emoji ou image
+    if message["role"] == "assistant":
+        avatar = "logo.png"
+    else:
+        avatar = "🙋‍♂️" # Tu peux mettre "🙋‍♂️", "👤" ou même un lien vers une image
+    
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
@@ -138,7 +155,7 @@ if db:
     chain = (prompt | llm | StrOutputParser())
 
     if user_input := st.chat_input("Demande à Woof Match..."):
-        st.chat_message("user").markdown(user_input)
+    st.chat_message("user", avatar="🙋‍♂️").markdown(user_input)
         
         context_docs = retriever.invoke(user_input)
         formatted_context = format_docs(context_docs)
