@@ -19,13 +19,13 @@ if not api_key:
 
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
-# 2. CSS pour un look épuré, sans bloc noir, avec curseur clignotant
+# 2. CSS : Look épuré, Rose Pâle et Interface Pro
 st.markdown("""
     <style>
-    /* 1. Fond global blanc */
+    /* Fond global blanc */
     .stApp { background-color: #FFFFFF !important; }
     
-    /* 2. CIBLAGE DU BLOC BAS (stBottom) */
+    /* CIBLAGE DU BLOC BAS */
     [data-testid="stBottom"] {
         background-color: #FFFFFF !important;
         border-top: none !important;
@@ -36,10 +36,10 @@ st.markdown("""
         background-image: none !important;
     }
 
-    /* 3. STYLE DE LA BARRE DE SAISIE AGRANDIE */
+    /* BARRE DE SAISIE AGRANDIE */
     [data-testid="stChatInput"] {
         background-color: #FFFFFF !important;
-        padding-bottom: 30px !important; /* Un peu plus d'espace en bas */
+        padding-bottom: 30px !important;
     }
 
     [data-testid="stChatInput"] textarea {
@@ -48,39 +48,37 @@ st.markdown("""
         border-radius: 15px !important;
         color: #1A1A1A !important;
         caret-color: #1A1A1A !important;
-        
-        /* --- AGRANDISSEMENT --- */
-        padding: 15px !important; /* Plus d'espace intérieur */
-        min-height: 60px !important; /* Hauteur minimale plus grande */
+        padding: 15px !important;
+        min-height: 60px !important;
     }
 
-    /* --- COULEUR DE LA PHRASE (Placeholder) --- */
+    /* Placeholder visible */
     [data-testid="stChatInput"] textarea::placeholder {
-        color: #888888 !important; /* Un gris plus soutenu pour la visibilité */
+        color: #888888 !important;
         opacity: 1 !important;
     }
 
     [data-testid="stChatInput"] button {
         background-color: #1A1A1A !important;
         border-radius: 50% !important;
-        bottom: 12px !important; /* Aligné avec la nouvelle hauteur */
+        bottom: 12px !important;
     }
 
-    /* 4. NETTOYAGE UI */
+    /* NETTOYAGE UI */
     [data-testid="stHeader"], footer { visibility: hidden; height: 0px; }
     #MainMenu { visibility: hidden; }
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
 
-    /* --- COULEUR DE L'AVATAR USER (Cercle Rose Pâle) --- */
+    /* --- COULEUR DE L'AVATAR USER (Rose Pâle) --- */
     [data-testid="stChatMessageAvatarUser"] {
-        background-color: #FFD1DC !important; /* Rose pâle "Baby Pink" */
-        color: #1A1A1A !important; /* Couleur de l'icône à l'intérieur */
+        background-color: #FFD1DC !important;
+        color: #1A1A1A !important;
     }
 
-    /* Optionnel : Si tu veux aussi que la bulle de texte de l'utilisateur soit rosée */
-    [data-test="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-        background-color: #FFF0F5 !important; /* Fond de la bulle de texte en rose très clair */
+    /* Bulle de texte de l'utilisateur en rose très clair */
+    [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+        background-color: #FFF0F5 !important;
         border-radius: 15px !important;
     }
 
@@ -115,13 +113,12 @@ st.markdown("---")
 # 5. INITIALISATION & HISTORIQUE
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
-        
+
 for message in st.session_state.messages:
-    # Avatar assistant = logo, Avatar user = emoji ou image
     if message["role"] == "assistant":
         avatar = "logo.png"
     else:
-        avatar = "🙋‍♂️" # Tu peux mettre "🙋‍♂️", "👤" ou même un lien vers une image
+        avatar = "🙋‍♂️"
     
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
@@ -133,17 +130,8 @@ if db:
 
     prompt = ChatPromptTemplate.from_messages([
         ("system", """Tu es 'Le Parrain des Chiens', un expert canin légendaire, drôle et psychologue. 🕶️
-        
-        TON RÔLE : 
-        Tu maries des âmes. Tu dois TOUT découvrir par la discussion.
-
-        PROTOCOLE :
-        1. FLEXIBILITÉ : Réponds aux questions directes, puis relance l'enquête.
-        2. PRO-ACTIVITÉ : Découvre le logement, le sport, et les contraintes (enfants, allergies).
-        3. IMAGE : Affiche l'image ainsi : ![nom](lien).
-
-        TON STYLE : Direct, emojis, punchlines, bienveillance totale.
-        
+        Tu maries des âmes. Découvre le logement, le sport, et les contraintes.
+        Affiche l'image ainsi : ![nom](lien).
         Contexte : {context}"""),
         MessagesPlaceholder(variable_name="history"),
         ("human", "{question}"),
@@ -155,7 +143,8 @@ if db:
     chain = (prompt | llm | StrOutputParser())
 
     if user_input := st.chat_input("Demande à Woof Match..."):
-    st.chat_message("user", avatar="🙋‍♂️").markdown(user_input)
+        # --- ICI L'INDENTATION EST CORRIGÉE ---
+        st.chat_message("user", avatar="🙋‍♂️").markdown(user_input)
         
         context_docs = retriever.invoke(user_input)
         formatted_context = format_docs(context_docs)
