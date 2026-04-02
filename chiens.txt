@@ -12,6 +12,7 @@ CARACTÈRE : Joyeux, joueur, demande un toilettage régulier.
 
 RACE : CHIHUAHUA | POIDS : 1-3kg | ÉNERGIE : 4/10 | ESCALIERS : Aucun problème (très léger) | POILS : Court ou long
 CARACTÈRE : Vif, très attaché à son maître, peut être aboyeur.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/4/4c/Chihuahua1_bvdb.jpg
 
 RACE : TECKEL | POIDS : 5-9kg | ÉNERGIE : 5/10 | ESCALIERS : DÉCONSEILLÉ (Hernie discale) | POILS : Ras, long ou dur
 CARACTÈRE : Têtu, courageux, grand chasseur. Doit être porté dans les escaliers.
@@ -24,6 +25,7 @@ CARACTÈRE : Calme, indépendant mais affectueux.
 
 RACE : CARLIN (PUG) | POIDS : 6-9kg | ÉNERGIE : 3/10 | ESCALIERS : Risque modéré (respiration) | POILS : Perte forte
 CARACTÈRE : Clown, très sociable, craint la chaleur.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/0/08/Pug_on_chair.jpg
 
 RACE : SPITZ NAIN (POMERANIAN) | POIDS : 2-4kg | ÉNERGIE : 5/10 | ESCALIERS : Aucun problème | POILS : Très dense
 CARACTÈRE : Très intelligent, extraverti, aboyeur d'alerte.
@@ -38,6 +40,7 @@ CARACTÈRE : Toujours joyeux, gourmand, nécessite de longues balades.
 
 RACE : SHIBA INU | POIDS : 8-11kg | ÉNERGIE : 6/10 | ESCALIERS : Aucun problème | POILS : Forte mue (2x/an)
 CARACTÈRE : Indépendant, propre comme un chat, éducation ferme requise.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/7/77/Shiba_Inu_red.jpg
 
 RACE : BEAGLE | POIDS : 10-15kg | ÉNERGIE : 8/10 | ESCALIERS : Aucun problème | POILS : Court
 CARACTÈRE : Odorat puissant, fugueur si non stimulé, très sociable.
@@ -47,6 +50,7 @@ CARACTÈRE : Travailleur acharné. Besoin de stimulation mentale intense, pas ju
 
 RACE : BERGER AUSTRALIEN (MINI OU STANDARD) | POIDS : 15-25kg | ÉNERGIE : 9/10 | ESCALIERS : Robuste | POILS : Long
 CARACTÈRE : Dévoué, protecteur, actif. Doit avoir une "mission" quotidienne.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/d/d5/Australian_Shepherd_red_merle_portrait_Canon_EOS_700D_Pentacon_200mm_f4.jpg
 
 RACE : CANICHE MOYEN | POIDS : 12-18kg | ÉNERGIE : 7/10 | ESCALIERS : Aucun problème | POILS : Hypoallergénique
 CARACTÈRE : Brillant, facile à éduquer, très joueur.
@@ -56,6 +60,7 @@ CARACTÈRE : "Nanny dog", très proche de l'humain, puissant mais affectueux.
 
 RACE : WHIPPET | POIDS : 10-15kg | ÉNERGIE : 5/10 | ESCALIERS : Aucun problème | POILS : Très court
 CARACTÈRE : Discret, calme à l'intérieur, sprinteur à l'extérieur.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/b/b0/Whippet_Jessie.jpg
 
 RACE : CORGI PEMBROKE | POIDS : 10-14kg | ÉNERGIE : 6/10 | ESCALIERS : DÉCONSEILLÉ (dos long) | POILS : Perte forte
 CARACTÈRE : Grand chien dans un petit corps, vif, un peu têtu.
@@ -67,30 +72,38 @@ CARACTÈRE : Sportif, doux, a besoin de courir en liberté régulièrement.
 
 RACE : GOLDEN RETRIEVER | POIDS : 27-35kg | ÉNERGIE : 7/10 | ESCALIERS : Risque (hanches) | POILS : Perte forte
 CARACTÈRE : Patience d'ange, idéal famille, adore l'eau.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/c/c4/Golden_Retriever_2020_8.jpg
 
 RACE : LABRADOR RETRIEVER | POIDS : 25-36kg | ÉNERGIE : 8/10 | ESCALIERS : Risque (hanches) | POILS : Court mais dense
 CARACTÈRE : Très amical, éternel enfant, besoin de dépense physique.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/c/c9/Chocolate_Labrador_Retrievers_pair.jpg
 
 RACE : BERGER ALLEMAND | POIDS : 30-40kg | ÉNERGIE : 8/10 | ESCALIERS : RISQUE ÉLEVÉ (Dysplasie) | POILS : Perte forte
 CARACTÈRE : Courageux, protecteur, besoin d'un cadre clair.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/d/d9/Black-german-shepherd-29944091920.jpg
 
 RACE : DALMATIEN | POIDS : 25-32kg | ÉNERGIE : 9/10 | ESCALIERS : Robuste | POILS : Court (pique les tissus)
 CARACTÈRE : Endurance extrême, sensible, nécessite une éducation positive.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/1/19/Dalmatian_fetching_a_stick.jpg
 
 RACE : BOXER | POIDS : 25-32kg | ÉNERGIE : 8/10 | ESCALIERS : Risque modéré (cœur/articulations) | POILS : Court
 CARACTÈRE : Éternel joueur, protecteur avec les enfants, très dynamique.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/8/8d/1._Brindle_boxer_dog%2C_female.jpg
 
 RACE : HUSKY SIBÉRIEN | POIDS : 20-28kg | ÉNERGIE : 10/10 | ESCALIERS : Robuste | POILS : Grosse mue
 CARACTÈRE : Indépendant, hurleur, besoin de courir des kilomètres. Fugueur.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/f/ff/Husky_%2811293289843%29.jpg
 
 RACE : BRAQUE DE WEIMAR | POIDS : 25-40kg | ÉNERGIE : 9/10 | ESCALIERS : Robuste | POILS : Court gris
 CARACTÈRE : Chien de chasse puissant, très attaché à son maître (chien velcro).
 
 RACE : SAMOYÈDE | POIDS : 20-30kg | ÉNERGIE : 8/10 | ESCALIERS : Robuste | POILS : Blanc, perte massive
 CARACTÈRE : Toujours souriant, amical mais indépendant.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/9/9d/Samoyed_dog_two_year_old_female_dllu.jpg
 
 RACE : DOBERMAN | POIDS : 32-45kg | ÉNERGIE : 9/10 | ESCALIERS : Risque (cœur/articulations) | POILS : Court
 CARACTÈRE : Noble, ultra-rapide, garde d'élite, très sensible.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/5/53/Doberman_blue%2C_purebred_CKC.JPG
 
 RACE : SETTER IRLANDAIS | POIDS : 25-35kg | ÉNERGIE : 9/10 | ESCALIERS : Aucun problème | POILS : Long rouge
 CARACTÈRE : Fougueux, élégant, a besoin d'espace pour galoper.
@@ -99,18 +112,22 @@ CARACTÈRE : Fougueux, élégant, a besoin d'espace pour galoper.
 
 RACE : BOUVIER BERNOIS | POIDS : 40-55kg | ÉNERGIE : 5/10 | ESCALIERS : INTERDIT (Dysplasie sévère) | POILS : Perte forte
 CARACTÈRE : Pot-de-colle, calme, protecteur. Vie courte.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/c/c3/Bernese_Mountain_DOg.jpg
 
 RACE : TERRE-NEUVE | POIDS : 55-70kg | ÉNERGIE : 4/10 | ESCALIERS : INTERDIT (Poids extrême) | POILS : Épais, bave
 CARACTÈRE : Doux géant, adore l'eau, protecteur naturel.
 
 RACE : SAINT-BERNARD | POIDS : 65-85kg | ÉNERGIE : 3/10 | ESCALIERS : INTERDIT | POILS : Long ou court
 CARACTÈRE : Très calme, dissuasif par sa taille, demande peu d'exercice.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/d/d1/Rey_nieve.jpg
 
 RACE : CANE CORSO | POIDS : 40-50kg | ÉNERGIE : 7/10 | ESCALIERS : Risque élevé | POILS : Court
 CARACTÈRE : Gardien sérieux, calme en intérieur, nécessite une main ferme.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/3/3f/Cane_Corso_Gris_Plata.jpg
 
 RACE : ROTTWEILER | POIDS : 40-55kg | ÉNERGIE : 6/10 | ESCALIERS : Risque élevé | POILS : Court
 CARACTÈRE : Fidèle, tranquille, dissuasif, très affectueux en famille.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/5/59/%2803%29_Rottweiler_5829569485_22e037809a_o.jpg
 
 RACE : LÉVRIER IRLANDAIS (IRISH WOLFHOUND) | POIDS : 50-70kg | ÉNERGIE : 5/10 | ESCALIERS : INTERDIT | POILS : Dur
 CARACTÈRE : Le plus grand des chiens, doux, calme, nécessite beaucoup d'espace.
@@ -123,6 +140,7 @@ CARACTÈRE : Masse de tendresse, très peu actif, bave beaucoup.
 
 RACE : DOGUE ALLEMAND | POIDS : 50-80kg | ÉNERGIE : 5/10 | ESCALIERS : INTERDIT | POILS : Court
 CARACTÈRE : "Apollon des chiens", élégant, ne se rend pas compte de sa taille.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/e/eb/Great-dane-dog-1365445651zZJ.jpg
 
 RACE : BERGER D'ANATOLIE | POIDS : 40-65kg | ÉNERGIE : 6/10 | ESCALIERS : Risque élevé | POILS : Court dense
 CARACTÈRE : Indépendant, protecteur de troupeau, n'aime pas les inconnus.
@@ -134,18 +152,22 @@ CARACTÈRE : Calme, indépendant, loyal mais réservé.
 
 RACE : CHOW CHOW | POIDS : 20-30kg | ÉNERGIE : 3/10 | ESCALIERS : Risque modéré | POILS : Très dense
 CARACTÈRE : Caractère de chat, très distant, langue bleue.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/2/2c/01_Chow_Chow.jpg
 
 RACE : BASENJI | POIDS : 9-11kg | ÉNERGIE : 7/10 | ESCALIERS : Aucun problème | POILS : Court (pas d'odeur)
 CARACTÈRE : N'aboie pas, très propre, têtu et indépendant.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/c/c5/Basenji_Profile_%28loosercrop%29.jpg
 
 RACE : BULL TERRIER | POIDS : 22-30kg | ÉNERGIE : 7/10 | ESCALIERS : Robuste | POILS : Court
 CARACTÈRE : Tête en forme d'œuf, obstiné, très joueur et clown.
 
 RACE : AKITA INU | POIDS : 30-45kg | ÉNERGIE : 6/10 | ESCALIERS : Risque élevé | POILS : Dense
 CARACTÈRE : Digne, réservé, peu sociable avec ses congénères.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/a/a6/Japanese_Akita_Inu_Hachiko.jpg
 
 RACE : AKITA AMERICAIN | POIDS : 35-60kg | ÉNERGIE : 6/10 | ESCALIERS : Risque élevé | POILS : Dense
 CARACTÈRE : Digne, réservé, peu sociable avec ses congénères, têtu.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/d/d2/American-akita.jpg
 
 RACE : MALINOIS | POIDS : 25-35kg | ÉNERGIE : 10/10 | ESCALIERS : Robuste | POILS : Court
 CARACTÈRE : Formule 1 canine. Besoin de travail constant. Pour maîtres experts.
@@ -153,6 +175,7 @@ IMAGE : https://upload.wikimedia.org/wikipedia/commons/9/96/Belgian_Malinois_01.
 
 RACE : PETIT LÉVRIER ITALIEN | POIDS : 3-5kg | ÉNERGIE : 6/10 | ESCALIERS : Aucun problème (fragile) | POILS : Ras
 CARACTÈRE : Très sensible, rapide, adore le confort du canapé.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/6/67/Goethe_piccolo_levriero_italiano.jpg
 
 RACE : SCHNAUZER GÉANT | POIDS : 35-45kg | ÉNERGIE : 8/10 | ESCALIERS : Risque élevé | POILS : Hypoallergénique (dur)
 CARACTÈRE : Intelligent, protecteur, demande une éducation active.
@@ -162,3 +185,4 @@ CARACTÈRE : Chercheur de truffes, adore creuser et apprendre des tours.
 
 RACE : GREYHOUND | POIDS : 27-35kg | ÉNERGIE : 4/10 | ESCALIERS : Aucun problème | POILS : Très court
 CARACTÈRE : Discret, n'aboie jamais, s'adapte parfaitement à la vie en intérieur.
+IMAGE : https://upload.wikimedia.org/wikipedia/commons/9/92/Greyhound_smiling.JPG
