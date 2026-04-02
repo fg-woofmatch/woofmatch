@@ -19,19 +19,14 @@ if not api_key:
 
 st.set_page_config(page_title="WOOF MATCH", page_icon="🦴")
 
-# 2. CSS pour un look épuré et centré
+# 2. CSS pour un look épuré
 st.markdown("""
     <style>
     .stApp { background-color: #FFFFFF !important; }
     [data-testid="stHeader"] { background-color: rgba(0,0,0,0) !important; }
-    
-    /* On cache la sidebar complètement */
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
-
-    html, body, .stMarkdown, p, h1, span {
-        color: #1A1A1A !important;
-    }
+    html, body, .stMarkdown, p, h1, span { color: #1A1A1A !important; }
     </style>
     """, unsafe_allow_html=True)
 
@@ -58,27 +53,17 @@ st.markdown("<h1 style='text-align: center;'>🐾 WOOF MATCH</h1>", unsafe_allow
 st.markdown("<p style='text-align: center; font-style: italic;'>L'expert qui déniche votre compagnon idéal, sans filtre.</p>", unsafe_allow_html=True)
 st.markdown("---")
 
-# 5. HISTORIQUE
-    for message in st.session_state.messages:
-    # On définit l'icône selon le rôle
-    # "assistant" devient un emoji chien, "user" reste par défaut ou ce que tu veux
-    avatar = "logo.png" if message["role"] == "assistant" else None
-    
-    with st.chat_message(message["role"], avatar=avatar):
-        st.markdown(message["content"])
-        
+# 5. INITIALISATION & HISTORIQUE
 if "messages" not in st.session_state:
     st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
 
-    for message in st.session_state.messages:
-    # On définit l'icône selon le rôle
-    # "assistant" devient un emoji chien, "user" reste par défaut ou ce que tu veux
+# Affichage des messages
+for message in st.session_state.messages:
     avatar = "logo.png" if message["role"] == "assistant" else None
-    
-    with st.chat_message(message["role"], avatar="logo.png"):
+    with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
-# 6. LOGIQUE IA (PROMPT AMÉLIORÉ)
+# 6. LOGIQUE IA
 if db:
     retriever = db.as_retriever(search_kwargs={"k": 3})
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7, openai_api_key=api_key)
@@ -87,18 +72,15 @@ if db:
         ("system", """Tu es 'Le Parrain des Chiens', un expert canin légendaire, drôle et psychologue. 🕶️
         
         TON RÔLE : 
-        Tu ne listes pas des chiens, tu maries des âmes. Tu n'as plus de formulaires (sidebar), tu dois TOUT découvrir par la discussion.
+        Tu ne listes pas des chiens, tu maries des âmes. Tu n'as plus de formulaires, tu dois TOUT découvrir par la discussion.
 
         PROTOCOLE D'ENQUÊTE :
-        1. FLEXIBILITÉ : Si l'utilisateur pose une question directe (ex: "C'est quoi un chien hypoallergénique ?"), réponds précisément avec ton expertise, puis relance l'enquête.
-        2. PRO-ACTIVITÉ : Tu dois impérativement connaître ces points avant de proposer quoi que ce soit :
-           - Le logement (étage, ascenseur, jardin ?).
-           - Le sport (actif ou sédentaire ?).
-           - Les contraintes (enfants, chats, allergies, temps seul).
+        1. FLEXIBILITÉ : Si l'utilisateur pose une question directe, réponds avec expertise, puis relance l'enquête.
+        2. PRO-ACTIVITÉ : Découvre le logement, le sport, et les contraintes (enfants, allergies, temps seul).
         3. ANTI-PRÉCIPITATION : Ne donne JAMAIS de race au premier message. Analyse d'abord l'humain.
-        4. IMAGE : Quand tu proposes enfin 2 races max, affiche impérativement l'image avec la syntaxe : ![nom](lien).
+        4. IMAGE : Quand tu proposes enfin 2 races max, affiche l'image : ![nom](lien).
 
-        TON STYLE : Direct, plein d'emojis, avec des punchlines de coach, mais une bienveillance totale.
+        TON STYLE : Direct, plein d'emojis, punchlines de coach, bienveillance totale.
         
         Contexte : {context}"""),
         MessagesPlaceholder(variable_name="history"),
@@ -111,13 +93,16 @@ if db:
     chain = (prompt | llm | StrOutputParser())
 
     if user_input := st.chat_input("Parle au Parrain..."):
+        # Affichage immédiat du message utilisateur
         st.chat_message("user").markdown(user_input)
         
+        # Préparation des données
         context_docs = retriever.invoke(user_input)
         formatted_context = format_docs(context_docs)
         chat_history = st.session_state.messages 
 
-with st.chat_message("assistant", avatar="logo.png"):
+        # Génération de la réponse
+        with st.chat_message("assistant", avatar="logo.png"):
             response = chain.invoke({
                 "context": formatted_context,
                 "question": user_input,
@@ -125,5 +110,6 @@ with st.chat_message("assistant", avatar="logo.png"):
             })
             st.markdown(response)
         
+        # Sauvegarde dans l'historique
         st.session_state.messages.append({"role": "user", "content": user_input})
         st.session_state.messages.append({"role": "assistant", "content": response})
