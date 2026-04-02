@@ -70,16 +70,28 @@ st.markdown("""
     [data-testid="collapsedControl"] { display: none; }
     section[data-testid="stSidebar"] { display: none; }
 
-    /* --- COULEUR DE L'AVATAR USER (Rose Pâle) --- */
+/* --- COULEUR DE L'AVATAR USER (Cercle Rose) --- */
     [data-testid="stChatMessageAvatarUser"] {
         background-color: #FFD1DC !important;
         color: #1A1A1A !important;
     }
 
-    /* Bulle de texte de l'utilisateur en rose très clair */
+    /* --- FORCE LE FOND DE LA BULLE USER (Adieu le gris foncé) --- */
+    /* On cible le conteneur de message qui contient l'avatar user */
     [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
-        background-color: #FFF0F5 !important;
-        border-radius: 15px !important;
+        background-color: #FFF0F5 !important; /* Rose très pâle */
+        border: 1px solid #FFD1DC !important; /* Petite bordure pour la structure */
+    }
+
+    /* On force aussi le texte à l'intérieur en noir au cas où */
+    [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) div {
+        color: #1A1A1A !important;
+    }
+
+    /* Pour l'assistant, on peut aussi forcer un fond blanc pur ou gris très clair */
+    [data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+        background-color: #F8F9FA !important;
+        border: 1px solid #E6E0D0 !important;
     }
 
     /* Texte global noir */
