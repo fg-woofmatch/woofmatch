@@ -140,7 +140,7 @@ if db:
     retriever = db.as_retriever(search_kwargs={"k": 3})
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.7, openai_api_key=api_key)
 
-prompt = ChatPromptTemplate.from_messages([
+    prompt = ChatPromptTemplate.from_messages([
         ("system", """Tu es 'Le Coach Woof Match', l'expert canin ultime. Ton style est direct, rigoureux sur la santé, mais toujours avec une touche d'humour et d'énergie. 🐾
 
         TON RÔLE :
