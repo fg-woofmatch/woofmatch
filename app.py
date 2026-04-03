@@ -124,7 +124,7 @@ st.markdown("---")
 
 # 5. INITIALISATION & HISTORIQUE
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Dis-moi tout : tu vis en ville ou au grand air ? Tu es plutôt marathon ou canapé ?"}]
+    st.session_state.messages = [{"role": "assistant", "content": "Bienvenue dans mon bureau. 🕶️ Trouver le bon chien, c'est du sérieux. Des questions sur l'alimentation ? Sur l'elevage ? Dis-moi tout : Que souhaites tu savoir ?"}]
 
 for message in st.session_state.messages:
     if message["role"] == "assistant":
