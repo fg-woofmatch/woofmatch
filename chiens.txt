@@ -238,3 +238,66 @@ RACE : GREYHOUND | POIDS : 27-35kg | ÉNERGIE : 4/10 | ESCALIERS : Aucun problè
 CARACTÈRE : Discret, n'aboie jamais, s'adapte parfaitement à la vie en intérieur.
 IMAGE : https://upload.wikimedia.org/wikipedia/commons/9/92/Greyhound_smiling.JPG
 TAGS : #Sprinteur #Calme #NaboiePas #VieEnIntérieur #Doux
+
+REGISTRE DES CLANS (FRANCE & LOF)
+GROUPE 1 : LES PETITS CITADINS
+BOULEDOGUE FRANÇAIS | Élevage : Du Terroir de Fontfroide (11)
+CAVALIER KING CHARLES | Élevage : De la Géode (76)
+BICHON FRISÉ | Élevage : Des Portes de Hanau (67)
+CHIHUAHUA | Élevage : Des Petits Aztèques (33)
+TECKEL | Élevage : De l'Hermitage d'Automne (44)
+YORKSHIRE TERRIER | Élevage : Du Domaine de Monderlay (77)
+SHIH TZU | Élevage : De la Cascade d'Or (38)
+CARLIN (PUG) | Élevage : Des Drôles de Frimousses (24)
+SPITZ NAIN | Élevage : Du Royaume des Pom d'Amour (13)
+BOSTON TERRIER : Élevage : Des Gardiens du Donjon (45)
+
+GROUPE 2 : LES MÉDIUMS POLYVALENTS
+COCKER SPANIEL | Élevage : Du Domaine de Kérarzic (22)
+SHIBA INU | Élevage : Sakura Kensha (41)
+BEAGLE | Élevage : Du Feeling de Nolister (35)
+BORDER COLLIE | Élevage : Du Vent de la Savane (17)
+BERGER AUSTRALIEN | Élevage : Earth of Legends (03)
+CANICHE MOYEN | Élevage : Du Castel de la Roche aux Fées (35)
+STAFFIE | Élevage : De la Cité des Loups Gris (62)
+WHIPPET | Élevage : De la Romance des Damoiseaux (27)
+CORGI PEMBROKE | Élevage : Des Contes de la Clarée (05)
+ÉPAGNEUL BRETON | Élevage : Du Vallon de la Rigaudie (24)
+
+GROUPE 3 : LES GRANDS ET ATHLÉTIQUES
+GOLDEN RETRIEVER | Élevage : Butterfl'Highland (60)
+LABRADOR RETRIEVER | Élevage : Du Castel de la Roche aux Fées (35)
+BERGER ALLEMAND | Élevage : Du Val d'Anzin (59)
+DALMATIEN | Élevage : Des Jardins de l'Angelique (16)
+BOXER | Élevage : Des Jardins de Passiflore (31)
+HUSKY SIBÉRIEN | Élevage : Of Cold Winter Nights (63)
+BRAQUE DE WEIMAR | Élevage : Des Gris de la Haute Saône (70)
+SAMOYÈDE | Élevage : Des Sourires Polaires (71)
+DOBERMAN | Élevage : Du Reflet des Songes (42)
+SETTER IRLANDAIS | Élevage : Du Val de Loue (25)
+
+GROUPE 4 : LES GÉANTS ET FORCES TRANQUILLES
+BOUVIER BERNOIS | Élevage : Des Roches du Miel (21)
+TERRE-NEUVE | Élevage : De l'Odyssée des Anges (49)
+SAINT-BERNARD | Élevage : Du Val de Morépas (78)
+CANE CORSO | Élevage : De la Mirage de Torrenueva (13)
+ROTTWEILER | Élevage : Des Princes d'Aragon (66)
+LÉVRIER IRLANDAIS | Élevage : Du Jardin d'Icare (45)
+LEONBERG | Élevage : Du Temple d'Artémis (83)
+MASTIFF | Élevage : Du Domaine de l'Étang (27)
+DOGUE ALLEMAND | Élevage : Des Terres de la Rairie (72)
+BERGER D'ANATOLIE | Élevage : Du Domaine de l'Olympe (84)
+
+GROUPE 5 : LES RACES SPÉCIFIQUES ET PRIMITIVES
+SHAR PEI | Élevage : Du Royaume des Plis (77)
+CHOW CHOW | Élevage : De la Dynastie Han (18)
+BASENJI | Élevage : Out of Africa (28)
+BULL TERRIER | Élevage : De la Cité des Étourneaux (69)
+AKITA INU | Élevage : Of Kenshin (31)
+AKITA AMERICAIN | Élevage : De la Vallée des Myrtilles (88)
+AKITA AMERICAIN | Élevage : Krav Addict (60)
+MALINOIS | Élevage : Du Domaine de Vauroux (77)
+PETIT LÉVRIER ITALIEN | Élevage : De la Roche d'Eyrins (07)
+SCHNAUZER GÉANT | Élevage : Des Radicaux (45)
+LAGOTTO ROMAGNOLO | Élevage : Des Truffes du Soleil (13)
+GREYHOUND | Élevage : De la Vallée de la Sée (50)
